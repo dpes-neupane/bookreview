@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{%block head%}
+
+
+{% endblock %}
+
+{%block body%}
+<form method="post">
+    Your Name:<br/>
+   
+    <input name="name" type="text" id="name" required><br/>
+    Create a Password:<br/>
+    <input type="password" name="password"  id="password" required>
+    <button>Submit</button>
+</form>
+
+{% endblock %}

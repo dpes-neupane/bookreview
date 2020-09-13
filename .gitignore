@@ -1,0 +1,8 @@
+#ignore source_code directory
+/source_code/*
+
+#ignore files
+hello.html
+pic.jpg
+style.css
+table.html

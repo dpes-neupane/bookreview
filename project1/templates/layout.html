@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        {% block head %}{% endblock %}
+    </title>
+</head>
+<body>
+    {% block body %}{% endblock %}
+    {% for message in get_flashed_messages() %}
+    <div class="flash">
+        {% if message  %}
+            {{ message }}
+    {% endif %}</div>
+  {% endfor %}
+</body>
+</html>

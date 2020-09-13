@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block head %}
+Search Results!
+{% endblock %}
+
+{% block body %}
+<h1>{{user_name.name}}</h1>
+<ul>
+
+<li>Book name: {{book.name}}</li>
+<li>ISBN: {{ book.isbn }}</li>
+<li>Year of release: {{ book.year }}</li>
+<li>Author: {{ book.author }}</li>
+<li>Average Rating: {{ data['books'][0]['average_rating'] }}</li>
+<li>Number of rating received: {{ data['books'][0]['work_ratings_count'] }}</li>
+</ul>
+<form method="POST">
+    <p><textarea name="review" rows="7" cols="50" placeholder="Your Review Here..."></textarea></p>
+    <button>submit</button>
+</form>
+<hr>
+
+
+{% for row in rep %}
+    <h2>reviewed by:{{ Users.query.filter_by(id=row[0]).first().name }}</h2>
+    <p> {{ row[3] }} </p>
+{% endfor %}</br>
+<hr>
+    <p>{{ flag }}</p>
+<hr>    
+   per:{{ per }}
+   <br>
+   user_r{{ user_r }}
+    
+{% endblock %}
+
